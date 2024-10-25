@@ -1,39 +1,70 @@
 package com.ps;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Dealership {
     private String name;
     private String address;
     private String phone;
+    private ArrayList<Vehicle> inventory;
 
-    public static ArrayList<Vehicle> inventory = new ArrayList<>();
-
-    public static void getVehiclesByPrice(double min, double max) {
-
+    public Dealership(String name, String address, String phone) {
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
+        this.inventory = new ArrayList<>();
     }
-    public static void getVehiclesByMakeModel(String make, String model) {
 
+    public static List<Vehicle> getVehiclesByPrice(double min, double max) {
+        return null;
     }
-    public static void getVehiclesByYear(int min, int max) {
-
+    public static List<Vehicle> getVehiclesByMakeModel(String make, String model) {
+        return null;
     }
-    public static void getVehiclesByColor(String color) {
-
+    public static List<Vehicle> getVehiclesByYear(int min, int max) {
+        return null;
     }
-    public static void getVehiclesByMileage(int min, int max) {
-
+    public static List<Vehicle> getVehiclesByColor(String color) {
+        return null;
     }
-    public static void getVehiclesByType(String vehicleType) {
-
+    public static List<Vehicle> getVehiclesByMileage(int min, int max) {
+        return null;
     }
-    public static void getAllVehicles() {
-
+    public static List<Vehicle> getVehiclesByType(String vehicleType) {
+        return null;
     }
-    public static void addVehicle(Vehicle vehicle) {
-
+    public List<Vehicle> getAllVehicles() {
+        return this.inventory;
     }
-    public static void removeVehicle(Vehicle vehicle) {
+    public void addVehicle(Vehicle vehicle) {
+        this.inventory.add(vehicle);
+    }
+    public void removeVehicle(Vehicle vehicle) {
+        this.inventory.remove(vehicle);
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }
