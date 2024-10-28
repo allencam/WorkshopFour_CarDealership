@@ -33,8 +33,23 @@ public class Dealership {
         }
         return vehicles;
     }
-    public static List<Vehicle> getVehiclesByMakeModel(String make, String model) {
-        return null;
+    public List<Vehicle> getVehiclesByMakeModel(String make, String model) {
+        List<Vehicle> vehicles = new ArrayList<>();
+        if(model.isEmpty()) {
+            for(Vehicle vehicle : inventory) {
+                if(vehicle.getMake().toLowerCase().contains(make)) {
+                    vehicles.add(vehicle);
+                }
+            }
+        } else {
+            for(Vehicle vehicle : inventory) {
+                if(vehicle.getMake().toLowerCase().contains(make) && vehicle.getModel().toLowerCase().contains(model)) {
+                    vehicles.add(vehicle);
+                }
+            }
+        }
+
+        return vehicles;
     }
     public static List<Vehicle> getVehiclesByYear(int min, int max) {
         return null;

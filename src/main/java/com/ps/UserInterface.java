@@ -91,7 +91,12 @@ public class UserInterface {
         displayVehicles(dealership.getVehiclesByPrice(min,max));
     }
     private static void processGetByMakeModelRequest() {
+        System.out.println("Enter make (required): ");
+        String make = inputScan.nextLine().toLowerCase();
+        System.out.println("Enter model (optional): "); // Optional, because someone may want to see all Toyota
+        String model = inputScan.nextLine().toLowerCase();
 
+        displayVehicles(dealership.getVehiclesByMakeModel(make,model));
     }
     private static void processGetByYearRequest() {
 
