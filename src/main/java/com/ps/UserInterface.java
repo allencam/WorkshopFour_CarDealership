@@ -1,15 +1,18 @@
 package com.ps;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class UserInterface {
 
     static Scanner commandScan = new Scanner(System.in);
+    static Scanner inputScan = new Scanner(System.in);
     private static Dealership dealership; // Declaration, still need to initialize (name, address, phone)
 
     private static void init(){ // private, since we don't want to access this method in any other class
         // Loading the dealership from a file
-        DealershipFileManager.getDealership();
+        dealership = DealershipFileManager.getDealership();
+
     }
 
     public static void display() {
@@ -71,32 +74,37 @@ public class UserInterface {
             }
         } while (mainMenuCommand != 0);
     }
+    private static void displayVehicles(List<Vehicle> vehicles) {
+        for(Vehicle vehicle : vehicles) {
+            System.out.println(vehicle);
+        }
+    }
 
-    public static void processGetByPriceRequest() {
+    private static void processGetByPriceRequest() {
 
     }
-    public static void processGetByMakeModelRequest() {
+    private static void processGetByMakeModelRequest() {
 
     }
-    public static void processGetByYearRequest() {
+    private static void processGetByYearRequest() {
 
     }
-    public static void processGetByColorRequest() {
+    private static void processGetByColorRequest() {
 
     }
-    public static void processGetByMileageRequest() {
+    private static void processGetByMileageRequest() {
 
     }
-    public static void processGetByVehicleTypeRequest() {
+    private static void processGetByVehicleTypeRequest() {
 
     }
     public static void processGetAllVehiclesRequest() {
+        displayVehicles(dealership.getAllVehicles());
+    }
+    private static void processAddVehicleRequest() {
 
     }
-    public static void processAddVehicleRequest() {
-
-    }
-    public static void processRemoveVehicleRequest() {
+    private static void processRemoveVehicleRequest() {
 
     }
 }
