@@ -81,7 +81,14 @@ public class UserInterface {
     }
 
     private static void processGetByPriceRequest() {
+        double min = 0;
+        double max = 0;
+        System.out.print("Enter minimum value (enter 0 for no minimum): ");
+        min = inputScan.nextDouble();
+        System.out.print("Enter maximum value (enter 0 for no maximum): ");
+        max = inputScan.nextDouble();
 
+        displayVehicles(dealership.getVehiclesByPrice(min,max));
     }
     private static void processGetByMakeModelRequest() {
 
