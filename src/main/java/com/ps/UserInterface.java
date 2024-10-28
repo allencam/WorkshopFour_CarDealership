@@ -99,10 +99,18 @@ public class UserInterface {
         displayVehicles(dealership.getVehiclesByMakeModel(make,model));
     }
     private static void processGetByYearRequest() {
+        System.out.println("Enter starting year: ");
+        int minYear = inputScan.nextInt();
+        System.out.println("Enter ending year: ");
+        int maxYear = inputScan.nextInt();
 
+        displayVehicles(dealership.getVehiclesByYear(minYear,maxYear));
     }
     private static void processGetByColorRequest() {
+        System.out.println("Enter a color: ");
+        String color = inputScan.nextLine().toLowerCase();
 
+        displayVehicles(dealership.getVehiclesByColor(color));
     }
     private static void processGetByMileageRequest() {
 
